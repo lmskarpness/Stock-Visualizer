@@ -1,4 +1,5 @@
 ## Stock Visualizer
+![Site example](https://github.com/lmskarpness/Stock-Visualizer/blob/main/example.gif?raw=true)
 A web server that reaches Alpha Vantage stock API endpoints and visualizes the data on a chart.
 > [!NOTE]
 > This project is not affiliated with Alpha Vantage. However, this tool utilizes their stock API. To access a wide range of different tickers, [get a free API key.](https://www.alphavantage.co/support/#api-key).
