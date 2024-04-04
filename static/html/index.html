@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Stock Visualizer</title>
+        <script src="/echart/echarts.js"></script>
+        <link rel="stylesheet" href="/css/bootstrap.min.css">
+    </head>
+    <body>
+        <div class="container mt-5">
+            <div class="row d-flex justify-content-center">
+                <!-- Input -->
+                <div class="col">
+                    <div class="text-center">
+                        <h1 class="display-4">Choose a Stock</h1>
+                    </div>
+                    <form>
+                        <div class="btn-group my-3 d-flex" role="group" aria-label="Basic radio toggle button group">
+                            <input type="radio" class="btn-check" name="btnradio" id="api" autocomplete="off" checked>
+                            <label class="btn btn-outline-primary" for="api">I have an API key</label>
+                          
+                            <input type="radio" class="btn-check" name="btnradio" id="demo" autocomplete="off">
+                            <label class="btn btn-outline-primary" for="demo">Demo</label>
+                        </div>
+                    </form>
+                    <!-- API Form -->
+                    <div id="api-container">
+                        <form id="apiForm">
+                            <div class="form-floating mb-3">
+                                <input class="form-control" id="apiKey" name="apiKey">
+                                <label for="apiKey">AlphaVantage API Key</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input class="form-control" id="symbol" name="symbol">
+                                <label for="symbol">Ticker or Symbol</label>
+                            </div>
+                            <div class="container px-0">
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" class="form-check-input" name="time" id="Daily" value="DAILY" checked>
+                                    <label class="radio-inline" for="Daily">Daily</label>
+                                </div>
+        
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" class="form-check-input" name="time" id="Weekly" value="WEEKLY">
+                                    <label class="radio-inline" for="Weekly">Weekly</label>
+                                </div>
+        
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" class="form-check-input" name="time" id="Monthly" value="MONTHLY">
+                                    <label class="radio-inline" for="Monthly">Monthly</label>
+                                </div>
+                            </div>
+    
+                            <div class="text-center mt-5">
+                                <input id="stock-btn" type="submit" class="btn btn-primary" value="See Chart">
+                            </div>
+                        </form>
+                    </div>
+                    <!-- Demo Form -->
+                    <div style="display:none;" id="demo-container">
+                        <form id="demoForm">
+                            <div class="form-floating mb-3">
+                                <input class="form-control" type="text" id="demoKey" name="apiKey" value="demo" readonly>
+                                <label for="apiKey">Default API Key</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input class="form-control" type="text" id="symbol" name="symbol" value="IBM" readonly>
+                                <label for="symbol">Default Symbol</label>
+                            </div>
+                            <div class="container px-0">
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" class="form-check-input" name="time" id="Daily" value="DAILY" checked>
+                                    <label class="radio-inline" for="Daily">Daily</label>
+                                </div>
+        
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" class="form-check-input" name="time" id="Weekly" value="WEEKLY">
+                                    <label class="radio-inline" for="Weekly">Weekly</label>
+                                </div>
+        
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" class="form-check-input" name="time" id="Monthly" value="MONTHLY">
+                                    <label class="radio-inline" for="Monthly">Monthly</label>
+                                </div>
+                            </div>
+    
+                            <div class="text-center mt-5">
+                                <input id="stock-btn" type="submit" class="btn btn-primary" value="See Chart">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- Chart -->
+                <div class="col">
+                    <div id="stockChart" style="width: 600px;height:400px;"></div>
+                    <div id="stock-response"></div>
+                </div>
+            </div>
+        </div>
+        <script src="../js/charts.js"></script>
+        <script src="/js/stockScript.js"></script>
+    </body>
+</html>
